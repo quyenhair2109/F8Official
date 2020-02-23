@@ -30,3 +30,12 @@ html{
     /* những thằng con có độ dài lớn hơn size nó sẽ tự động nhảy xuống hàng  */
     flex-wrap: wrap;
 }
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
