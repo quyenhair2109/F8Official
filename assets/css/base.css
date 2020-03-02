@@ -1,4 +1,5 @@
 :root{
+    --primary-color: #ee4d2d;
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
@@ -9,18 +10,18 @@
 }
 
 html{
+    box-sizing: border-box; 
+    font-family: 'Roboto', sans-serif;
     /* 100% = 16px *;  62,5% = 10px */
     font-size: 62.5%;
-    line-height: 1.6rem; 
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
+    line-height: 1.6rem;
 }
 
 /* dựng base chuẩn bị responsive */
 .grid{
-    width: 1200px;
-    max-width: 100%;
     margin: 0 auto;
+    max-width: 100%;
+    width: 1200px;
 }
 .grid__full-width{
     width: 100%;
@@ -38,4 +39,29 @@ html{
     to{
         opacity: 1;
     }
+}
+
+/* modal */
+.modal{
+    bottom: 0;
+    display: flex;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.modal__overlay{
+    background-color: rgba(0 ,0 ,0 ,0.4);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.modal__body{
+    background-color: var(--white-color);
+    border-radius: 5px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+    width: 100px;
+    z-index: 1;
 }

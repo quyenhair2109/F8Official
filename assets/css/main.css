@@ -1,6 +1,6 @@
 .header{
-    height: 120px;
     background-image: linear-gradient(0, #fe6443, #f53e2d);
+    height: 120px;
 }
 
 .header__nav-bar{
@@ -9,21 +9,21 @@
 }
 .header__nav-list{
     list-style: none;
-    padding-left: 0;
     margin-top: 4px;
+    padding-left: 0;
 }
 .header__nav-item{
     margin: 0 8px;
-    position: relative;
     min-height: 26px;
+    position: relative;
 }
 .header__nav-item, .header__nav-item-link{
+    color: var(--white-color);
+    cursor: pointer;
     display: inline-block;
     font-size: 1.4rem;
-    color: var(--white-color);
-    text-decoration: none;
     font-weight: 300;
-    cursor: pointer;
+    text-decoration: none;
 }
 .header__nav-item:hover, .header__nav-item-link:hover, .header__nav-icon-link:hover{
     color: rgba(255, 255, 255, 0.7);
@@ -32,14 +32,14 @@
     font-weight: 450;
 }
 .header__nav-item--separate::after{
+    background-color: rgb(245, 186, 182);
     content: "";
     display: block;
-    position: absolute;
-    width: 1px;
     height: 14px;
-    background-color: rgb(245, 186, 182);
+    position: absolute;
     right: -10px;
     top: 25%;
+    width: 1px;
     /* transform: translateY(50%); */
 }
 .header__nav-icon-link{
@@ -47,37 +47,37 @@
     text-decoration: none;
 }
 .header__nav-item, .header__nav-item-link, .header__nav-icon-link{
-    display: inline-flex;
     align-items: center;
+    display: inline-flex;
 }
 .header__nav-icon{
     font-size: 1.8rem;
     margin: 0 4px;
 }
 .header__nav-tittle-no-pointer{
-    cursor: text;
     color: var(--white-color);
+    cursor: text;
 }
 
 /* Header QR code */
 .header__qr{
-    width: 186px;
+    animation: fadeIn ease-in 0.3s;
     background-color: var(--white-color);
-    position: absolute;
-    left: 0;
-    top: 120%;
-    padding: 8px;
     border-radius: 2px;
     display: none;
-    animation: fadeIn ease-in 0.3s;
+    left: 0;
+    padding: 8px;
+    position: absolute;
+    top: 120%;
+    width: 186px;
 }
 .header__qr::before{
     content: "";
-    position: absolute;
-    width: 100%;
     height: 16px;
     left: 0;
+    position: absolute;
     top: -16px;
+    width: 100%;
 }
 .header__nav-item:first-child:hover .header__qr{
     display: block;
@@ -98,31 +98,71 @@
 .header__qr-down{
     height: 16px;
 }
-
+.header__nav-item--has-noti:hover .header__notify{
+    display: block;
+}
 /* header notification */
 .header__notify{
-    position: absolute;
-    top: 118%;
-    right: 0;
-    width: 404px;
+    animation: headerNotiGrow ease-in 0.2s;
     background-color: var(--white-color);
     border: 1px solid #d3d3d3;
+    cursor: default;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 118%;
+    transform-origin: calc(100% - 20px) top;
+    width: 404px;
+    will-change: opacity, transform;
 }
-
+.header__notify::before{
+    border: 20px solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: -30px;
+}
+/* làm cầu nối tránh mất box noti khi di chuột */
+.header__notify::after{
+    content: "";
+    display: block;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: -16px;
+    width: 90px;
+}
+@keyframes headerNotiGrow{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 .header__notify-header{
     height: 40px;
 }
 .header__notify-header h3{
     color: #999;
-    margin: 0 0 0 12px;
-    font-weight: 400;
     font-size: 1.4rem;
+    font-weight: 400;
     line-height: 40px;
+    margin: 0 0 0 12px;
 }
 .header__notify-list{
     padding-left: 0;
 }
 .header__notify-item{
+    /* background-color:  rgba(238, 77, 45, 0.1); */
+}
+.header__notify-item--viewed{
+    background-color:  rgba(238, 77, 45, 0.1);
+}
+.header__notify-item:hover{
+    background-color: #f7f7f7;
 }
 .header__notify-link{
     display: flex;
@@ -130,20 +170,37 @@
     text-decoration: none;
 }
 .header__notify-img{
-    width: 48px;
     object-fit: contain;
+    width: 48px;
 }
 .header__notify-info{
     margin-left: 12px;
 }
 .header__notify-name{
+    color: var(--text-color);
     display: block;
     font-size: 1.4rem;
-    color: var(--black-color);
     font-weight: 400;
+    line-height: 1.8rem;
 }
 .header__notify-description{
+    color: #756f6e;
     display: block;
     font-size: 1.2rem;
-    color: #756f6e;
+    line-height: 1.6rem;
+    margin-top: 4px;
+}
+.header__notify-footer{
+    display: flex;
+}
+.header__notify-footer a{
+    color: var(--text-color);
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: auto;
+    padding: 8px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
 }
