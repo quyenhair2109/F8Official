@@ -156,9 +156,6 @@
 .header__notify-list{
     padding-left: 0;
 }
-.header__notify-item{
-    /* background-color:  rgba(238, 77, 45, 0.1); */
-}
 .header__notify-item--viewed{
     background-color:  rgba(238, 77, 45, 0.1);
 }
@@ -233,8 +230,6 @@
     font-weight: 400;
     color: var(--primary-color);
     cursor: pointer;
-}
-.auth-form__form{
 }
 .auth-form__input{
     width: 100%;
