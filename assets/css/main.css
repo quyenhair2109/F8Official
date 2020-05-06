@@ -11,6 +11,7 @@
     list-style: none;
     margin: 4px 0 0 0;
     padding-left: 0;
+    display: flex;
 }
 .header__nav-item{
     margin: 0 8px;
@@ -48,7 +49,7 @@
 }
 .header__nav-item, .header__nav-item-link, .header__nav-icon-link{
     align-items: center;
-    display: inline-flex;
+    display: flex;
 }
 .header__nav-icon{
     font-size: 1.8rem;
@@ -304,6 +305,22 @@
 .auth-form__help-forget{
     color: var(--primary-color);
 }
+/* user login */
+.header__nav-user{
+    display: inline-flex;
+    justify-content: space-between;
+}
+.header__nav-user-ava{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.header__nav-user-name{
+    margin-left: 8px;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
 
 /* header with search  */
 .header-with-search{
@@ -496,11 +513,11 @@
     position: absolute;
     top: calc(100% + 8px);
     right: -12px;
-    background-color: var(--white-color);
+    background-color: #fdfdfd;
     width: 400px;
     border-radius: 2px;
     box-shadow: 0 1px 3.125rem rgba(0, 0, 0, 0.2);
-    /* display: none; */
+    display: none;
     animation: fadeIn ease-in 0.2s;
 }
 .header__cart-list::after{
@@ -546,11 +563,16 @@ img.header__cart-empty{
 .header__cart-item{
     display: flex;
     padding: 12px;
-    background-color: #f0f0f0;
+    align-items: center;
+}
+.header__cart-item:hover{
+    background-color: #f8f8f8;
+    cursor: default;
 }
 .header__cart-img{
     width: 42px;
     height: 42px;
+    border: solid 1px #e8e8e8;
 }
 .header__cart-item-info{
     width: 100%;
@@ -582,9 +604,26 @@ img.header__cart-empty{
     color: #757575;
 }
 .header__cart-item-body{
+    display: flex;
+    justify-content: space-between;
 }
 .header__cart-item-description{
+    color: #757575;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 .header__cart-item-remove{
-    
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+.header__cart-item-remove:hover{
+    color: var(--primary-color);
+    cursor: pointer;
+}
+.header__cart-view{
+    float: right;
+    margin: 0 12px 12px 0;
+}
+.header__cart-view:hover{
+    background-color: #f05d41;
 }
