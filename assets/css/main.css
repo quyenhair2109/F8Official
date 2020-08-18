@@ -22,7 +22,7 @@
     color: var(--white-color);
     cursor: pointer;
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 300;
     text-decoration: none;
 }
@@ -46,6 +46,10 @@
 .header__nav-icon-link{
     color: var(--white-color);
     text-decoration: none;
+}
+.header__nav-icon-link:nth-child(2){
+    margin-left: 3px;
+    /* căn để icon facebook và instagram và chữ kết nối cách đều nhau */
 }
 .header__nav-item, .header__nav-item-link, .header__nav-icon-link{
     align-items: center;
@@ -112,10 +116,11 @@
     position: absolute;
     right: 0;
     top: 118%;
-    transform-origin: calc(100% - 20px) top;
+    transform-origin: calc(100% - 32px) top;
     width: 404px;
     will-change: opacity, transform;
     z-index: 1;
+    border-radius: 2px;
 }
 .header__notify::before{
     border: 20px solid;
@@ -309,6 +314,7 @@
 .header__nav-user{
     display: inline-flex;
     justify-content: space-between;
+    position: relative;
 }
 .header__nav-user-ava{
     width: 22px;
@@ -317,9 +323,69 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .header__nav-user-name{
-    margin-left: 8px;
+    margin-left: 4px;
     font-size: 1.4rem;
     font-weight: 400;
+}
+
+.header__nav-user:hover .header__nav-user-menu{
+    display: block;
+}
+
+.header__nav-user-menu{
+    position: absolute;
+    z-index: 1;
+    padding: 0;
+    top: 100%;
+    right: 0;
+    width: 160px;
+    background: var(--white-color);
+    border-radius: 4px;
+    list-style: none;
+    box-shadow: 0 1px 2px #e0e0e0;
+    display: none;
+}
+
+.header__nav-user-menu::before{
+    border: 20px solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: -26px;
+}
+.header__nav-user-menu::after{
+    position: absolute;
+    content: "";
+    display: block;
+    top: -8px;
+    right: 0;
+    width: 80%;
+    height: 8px;
+}
+
+li.header__nav-user-item:first-child{
+    border-radius: 4px 0 4px 0;
+    overflow: hidden;
+}
+li.header__nav-user-item:last-child{
+    border-radius: 0 4px 0 4px;
+    overflow: hidden;
+}
+
+li.header__nav-user-item-separate{
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header__nav-user-item a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    padding: 8px 16px; /* padding cho vào thẻ a để phạm vi bấm được của người dùng rộng hơn */
+    display: block;
+}
+.header__nav-user-item a:hover{
+    background: #fafafa;
 }
 
 /* header with search  */
@@ -331,6 +397,12 @@
 }
 .header__logo{
     width: 200px;
+}
+.header__logo-link{
+    color: transparent;
+    /* tránh trường hợp tạo border xanh quanh thẻ a */
+    text-decoration: none;
+    /* một số trình duyệt cổ hay bị gạch chân khi có thẻ link a */
 }
 .header__logo-img{
     width: 150px;
@@ -422,7 +494,7 @@
 .header__search-option{
     position: absolute;
     right: 0;
-    top: 100%;
+    top: calc(100%-1px);
     border-radius: 2px;
     background-color: var(--white-color);
     width: 130px;
@@ -511,7 +583,7 @@
 }
 .header__cart-list{
     position: absolute;
-    top: calc(100% + 8px);
+    top: calc(100% + 7px);
     right: -12px;
     background-color: #fdfdfd;
     width: 400px;
@@ -627,3 +699,66 @@ img.header__cart-empty{
 .header__cart-view:hover{
     background-color: #f05d41;
 }
+
+
+.app__container{
+    background: #f5f5f5;
+}
+
+.app__content{
+    padding-top: 36px;
+}
+
+.category{
+    background-color: var(--white-color);
+    border-radius: 2px;
+}
+.category__heading{
+    color: var(--text-color);
+    font-size: 1.7rem;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+.category__heading-icon{
+    font-size: 1.4rem;
+    margin-right: 4px;
+    position: relative; /*để cân hàng icon và heading*/
+    top: -1px;
+}
+
+.category-list{
+    padding-left: 0;
+    list-style: none;
+    padding-bottom: 8px;
+    margin-left: 9px;
+}
+.category-item--active .category-item__link{
+    color: var(--primary-color);
+}
+.category-item--active .category-item__link::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 6px;
+    transform: translateY(-50%);
+    border: 4px solid;
+    border-color: transparent transparent transparent var(--primary-color);
+}
+.category-item__link{
+    position: relative;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: block;
+    padding: 4px 16px;
+    right: 0;
+    transition: right linear 0.1s;
+}
+.category-item__link:hover{
+    right: -4px;
+    color: var(--primary-color);
+}
+
+/* Home soft + filter */
