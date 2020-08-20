@@ -819,3 +819,32 @@ img.header__cart-empty{
     font-size: 1.4rem;
     color: #555;
 }
+
+/* product item */
+.home-product-item{
+    margin-top: 10px;
+    background: var(--white-color);
+}
+.home-product-item__img{
+    padding-top: 100%; /* để tự set chiều dài chiều rộng */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.home-product-item__name{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.8rem;
+    margin: 10px;
+    /* css cho chỉ hiện chữ 2 dòng và hiện dấu 3 chấm */
+    height: 3.6rem;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* css cho các trình duyệt khác, chỉ dùng khi hiển thị 1 dòng */
+    /* text-overflow: ellipsis;
+    white-space: nowrap; */
+}
