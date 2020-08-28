@@ -987,3 +987,7 @@ i.home-product-item__like-icon-fill{
     position: relative;
     top: -10px;
 }
+
+.home-product__pagination{
+    margin: 48px auto 32px;
+}
